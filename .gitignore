@@ -41,3 +41,6 @@ next-env.d.ts
 .qodo
 
 *storybook.log
+
+# Storybook static build directory
+storybook-static

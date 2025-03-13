@@ -123,6 +123,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build storybook
-        run: pnpm storybook:build
+        run: pnpm build-storybook
         env:
           CI: true
