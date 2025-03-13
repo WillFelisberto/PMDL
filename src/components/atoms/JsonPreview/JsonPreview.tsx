@@ -30,7 +30,7 @@ export const JsonPreview = ({ promotion }: JsonPreviewProps) => {
       templateName: 'rawPmdlTemplate',
       sites: [
         {
-          repositoryId: 'siteUS' // Pode ser dinâmico se necessário
+          repositoryId: 'siteUS'
         }
       ],
       templateValues: {
