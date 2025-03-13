@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortableCondition deve renderizar corretamente a condição comparadora 1`] = `
+<div>
+  <div
+    class="group relative bg-gray-50 p-4 rounded-lg border"
+    data-testid="sortable-condition"
+  >
+    <div
+      class="flex gap-2 items-center"
+    >
+      <button
+        aria-describedby=""
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="cursor-grab"
+        data-testid="drag-handle"
+        role="button"
+        tabindex="0"
+      >
+        GripVertical Icon
+      </button>
+      <select
+        class="flex-1 p-2 border rounded-md"
+        data-testid="comparator-select"
+      >
+        <option
+          value="equals"
+        >
+          =
+        </option>
+        <option
+          value="not-equals"
+        >
+          ≠
+        </option>
+        <option
+          value="greater-than"
+        >
+          &gt;
+        </option>
+        <option
+          value="greater-than-or-equals"
+        >
+          ≥
+        </option>
+        <option
+          value="less-than"
+        >
+          &lt;
+        </option>
+        <option
+          value="less-than-or-equals"
+        >
+          ≤
+        </option>
+        <option
+          value="contains"
+        >
+          Contém
+        </option>
+        <option
+          value="starts-with"
+        >
+          Começa com
+        </option>
+        <option
+          value="ends-with"
+        >
+          Termina com
+        </option>
+        <option
+          value="isoneof"
+        >
+          É um de
+        </option>
+        <option
+          value="isnotoneof"
+        >
+          Não é um de
+        </option>
+        <option
+          value="includes"
+        >
+          Inclui
+        </option>
+        <option
+          value="includes-any"
+        >
+          Inclui qualquer
+        </option>
+        <option
+          value="includes-all"
+        >
+          Inclui todos
+        </option>
+      </select>
+      <input
+        class="flex-1 p-2 border rounded-md"
+        data-testid="left-value-input"
+        placeholder="Campo (ex: order.total)"
+        value="order.total"
+      />
+      <input
+        class="flex-1 p-2 border rounded-md"
+        data-testid="right-value-input"
+        placeholder="Valor"
+        value="100"
+      />
+      <button
+        class="text-red-500 hover:text-red-700"
+        data-testid="delete-button"
+      >
+        X Icon
+      </button>
+    </div>
+  </div>
+</div>
+`;

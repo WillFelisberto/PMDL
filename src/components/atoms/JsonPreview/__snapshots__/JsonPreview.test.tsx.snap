@@ -1,0 +1,467 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JsonPreview Component Deve renderizar corretamente o título do JSON Preview 1`] = `
+<div>
+  <div
+    class="mt-8 space-y-4"
+  >
+    <h3
+      class="text-lg font-semibold text-gray-700"
+    >
+      Payload OCC (JSON)
+    </h3>
+    <div
+      class="rounded-lg overflow-hidden border border-gray-200 relative"
+    >
+      <button
+        class="absolute right-2 top-2 bg-gray-800 text-white px-3 py-1 rounded-md text-sm hover:bg-gray-700 transition-colors"
+        data-testid="copy-button"
+      >
+        Copiar
+      </button>
+      <pre
+        data-testid="json-preview"
+        style="color: rgb(197, 200, 198); text-shadow: 0 1px rgba(0, 0, 0, 0.3); font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none; padding: 1.5rem; margin: 0px; overflow: auto; border-radius: 0.3em; background: rgb(29, 31, 33); font-size: 0.875rem;"
+      >
+        <code
+          class="language-json"
+          style="white-space: pre; color: rgb(197, 200, 198); text-shadow: 0 1px rgba(0, 0, 0, 0.3); font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace; direction: ltr; text-align: left; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"
+        >
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            {
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+              
+          </span>
+          <span
+            class="token"
+            style="color: rgb(150, 203, 254);"
+          >
+            "displayName"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(237, 237, 237);"
+          >
+            :
+          </span>
+          <span>
+             
+          </span>
+          <span
+            class="token"
+            style="color: rgb(168, 255, 96);"
+          >
+            "Promoção Teste"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            ,
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+              
+          </span>
+          <span
+            class="token"
+            style="color: rgb(150, 203, 254);"
+          >
+            "description"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(237, 237, 237);"
+          >
+            :
+          </span>
+          <span>
+             
+          </span>
+          <span
+            class="token"
+            style="color: rgb(168, 255, 96);"
+          >
+            "Descrição válida"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            ,
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+              
+          </span>
+          <span
+            class="token"
+            style="color: rgb(150, 203, 254);"
+          >
+            "enabled"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(237, 237, 237);"
+          >
+            :
+          </span>
+          <span>
+             
+          </span>
+          <span
+            class="token"
+            style="color: rgb(153, 204, 153);"
+          >
+            true
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            ,
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+              
+          </span>
+          <span
+            class="token"
+            style="color: rgb(150, 203, 254);"
+          >
+            "priority"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(237, 237, 237);"
+          >
+            :
+          </span>
+          <span>
+             
+          </span>
+          <span
+            class="token"
+            style="color: rgb(255, 115, 253);"
+          >
+            1
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            ,
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+              
+          </span>
+          <span
+            class="token"
+            style="color: rgb(150, 203, 254);"
+          >
+            "templatePath"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(237, 237, 237);"
+          >
+            :
+          </span>
+          <span>
+             
+          </span>
+          <span
+            class="token"
+            style="color: rgb(168, 255, 96);"
+          >
+            "order"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            ,
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+              
+          </span>
+          <span
+            class="token"
+            style="color: rgb(150, 203, 254);"
+          >
+            "templateName"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(237, 237, 237);"
+          >
+            :
+          </span>
+          <span>
+             
+          </span>
+          <span
+            class="token"
+            style="color: rgb(168, 255, 96);"
+          >
+            "rawPmdlTemplate"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            ,
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+              
+          </span>
+          <span
+            class="token"
+            style="color: rgb(150, 203, 254);"
+          >
+            "sites"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(237, 237, 237);"
+          >
+            :
+          </span>
+          <span>
+             
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            [
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+                
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            {
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+                  
+          </span>
+          <span
+            class="token"
+            style="color: rgb(150, 203, 254);"
+          >
+            "repositoryId"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(237, 237, 237);"
+          >
+            :
+          </span>
+          <span>
+             
+          </span>
+          <span
+            class="token"
+            style="color: rgb(168, 255, 96);"
+          >
+            "siteUS"
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+                
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            }
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+              
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            ]
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            ,
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+              
+          </span>
+          <span
+            class="token"
+            style="color: rgb(150, 203, 254);"
+          >
+            "templateValues"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(237, 237, 237);"
+          >
+            :
+          </span>
+          <span>
+             
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            {
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+                
+          </span>
+          <span
+            class="token"
+            style="color: rgb(150, 203, 254);"
+          >
+            "pmdl"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(237, 237, 237);"
+          >
+            :
+          </span>
+          <span>
+             
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            {
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+                  
+          </span>
+          <span
+            class="token"
+            style="color: rgb(150, 203, 254);"
+          >
+            "xml"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(237, 237, 237);"
+          >
+            :
+          </span>
+          <span>
+             
+          </span>
+          <span
+            class="token"
+            style="color: rgb(168, 255, 96);"
+          >
+            "&lt;pmdl&gt;Mocked XML&lt;/pmdl&gt;"
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+                
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            }
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+              
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            }
+          </span>
+          <span>
+            
+
+          </span>
+          <span />
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            }
+          </span>
+        </code>
+      </pre>
+    </div>
+  </div>
+</div>
+`;

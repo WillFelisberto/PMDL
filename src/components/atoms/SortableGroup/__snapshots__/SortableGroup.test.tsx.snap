@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortableGroup deve renderizar corretamente 1`] = `
+<div>
+  <div
+    class="relative bg-blue-50 rounded-lg border-2 border-blue-200 p-4 group"
+    data-testid="sortable-group"
+    style="margin-left: 0px;"
+  >
+    <div
+      class="flex items-center gap-2 mb-2"
+    >
+      <button
+        aria-describedby=""
+        aria-disabled="false"
+        aria-roledescription="sortable"
+        class="cursor-grab text-blue-500 hover:text-blue-700"
+        role="button"
+        tabindex="0"
+      >
+        GripVertical Icon
+      </button>
+      <select
+        class="px-2 py-1 rounded-md bg-white border"
+      >
+        <option
+          value="and"
+        >
+          AND
+        </option>
+        <option
+          value="or"
+        >
+          OR
+        </option>
+        <option
+          value="not"
+        >
+          NOT
+        </option>
+      </select>
+    </div>
+    <div
+      class="space-y-2"
+    />
+    <div
+      id="DndDescribedBy-0"
+      style="display: none;"
+    >
+      
+    To pick up a draggable item, press the space bar.
+    While dragging, use the arrow keys to move the item.
+    Press space again to drop the item in its new position, or press escape to cancel.
+  
+    </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      id="DndLiveRegion-0"
+      role="status"
+      style="position: fixed; top: 0px; left: 0px; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+    />
+    <div
+      class="mt-2 flex gap-2"
+    >
+      <button
+        class="flex items-center gap-1 text-sm text-blue-500 hover:text-blue-700"
+        data-testid="add-condition-button"
+      >
+        Plus Icon
+         Condição
+      </button>
+      <button
+        class="flex items-center gap-1 text-sm text-blue-500 hover:text-blue-700"
+        data-testid="add-group-button"
+      >
+        Plus Icon
+         Grupo
+      </button>
+    </div>
+  </div>
+</div>
+`;
