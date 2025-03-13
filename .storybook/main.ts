@@ -13,7 +13,7 @@ const config: StorybookConfig = {
     name: '@storybook/nextjs',
     options: {}
   },
-  staticDirs: ['..\\public'],
+  staticDirs: [path.resolve(__dirname, '../public')],
   webpackFinal: async (config) => {
     if (config.resolve) {
       config.resolve.alias = {
