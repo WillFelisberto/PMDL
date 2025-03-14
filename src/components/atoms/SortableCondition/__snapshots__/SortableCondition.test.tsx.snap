@@ -95,6 +95,31 @@ exports[`SortableCondition deve renderizar corretamente a condição comparadora
           Inclui todos
         </option>
       </select>
+      <select
+        class="p-2 border rounded-md"
+        data-testid="data-type-select"
+      >
+        <option
+          value="java.lang.String"
+        >
+          java.lang.String
+        </option>
+        <option
+          value="java.lang.Double"
+        >
+          java.lang.Double
+        </option>
+        <option
+          value="java.util.List"
+        >
+          java.util.List
+        </option>
+        <option
+          value="null"
+        >
+          null
+        </option>
+      </select>
       <input
         class="flex-1 p-2 border rounded-md"
         data-testid="left-value-input"

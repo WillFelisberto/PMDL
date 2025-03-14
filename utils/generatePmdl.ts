@@ -1,5 +1,6 @@
 import {
   ComparatorCondition,
+  comparatorDataTypeMap,
   OperationCondition,
   OperatorCondition,
   Promotion,
@@ -90,6 +91,10 @@ const buildOperation = (condition: PromotionCondition, element: any) => {
 
 const buildComparator = (condition: PromotionCondition, element: any) => {
   const comp = condition as ComparatorCondition;
+
+  // Se não tiver um dataType definido, usamos o padrão do mapeamento
+  const dataType = comp.dataType || comparatorDataTypeMap[comp.comparatorType] || 'string';
+
   buildValue({ type: 'value', value: comp.leftValue }, element);
 
   if (['includes', 'includes-any', 'includes-all'].includes(comp.comparatorType)) {
@@ -98,7 +103,7 @@ const buildComparator = (condition: PromotionCondition, element: any) => {
         type: 'array',
         values: comp.rightValue.split(',').map((v: string) => ({
           type: 'constant',
-          dataType: comp.dataType,
+          dataType,
           value: v.trim()
         }))
       },
@@ -108,7 +113,7 @@ const buildComparator = (condition: PromotionCondition, element: any) => {
     buildValue(
       {
         type: 'constant',
-        dataType: comp.dataType,
+        dataType,
         value: comp.rightValue
       },
       element

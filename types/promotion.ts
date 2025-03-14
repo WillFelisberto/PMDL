@@ -75,6 +75,23 @@ export type OperatorCondition = ConditionBase & {
   customType?: string; // Para operadores personalizados
 };
 
+export const comparatorDataTypeMap: Record<string, string> = {
+  equals: 'java.lang.String',
+  'not-equals': 'java.lang.String',
+  'greater-than': 'java.lang.Double',
+  'greater-than-or-equals': 'java.lang.Double',
+  'less-than': 'java.lang.Double',
+  'less-than-or-equals': 'java.lang.Double',
+  contains: 'java.lang.String',
+  'starts-with': 'java.lang.String',
+  'ends-with': 'java.lang.String',
+  isoneof: 'java.util.List',
+  isnotoneof: 'java.util.List',
+  includes: 'java.util.List',
+  'includes-any': 'java.util.List',
+  'includes-all': 'java.util.List'
+};
+
 export type OperationCondition = ConditionBase & {
   type: 'operation';
   operationType: 'union' | 'anded-union' | 'custom';

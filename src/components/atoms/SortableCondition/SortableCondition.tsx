@@ -1,4 +1,4 @@
-import { ComparatorCondition, PromotionCondition } from '@/types/promotion';
+import { ComparatorCondition, comparatorDataTypeMap, PromotionCondition } from '@/types/promotion';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { GripVertical, X } from 'lucide-react';
@@ -44,6 +44,7 @@ export const SortableCondition = ({
   }
 
   const comparatorCondition = condition as ComparatorCondition;
+  const suggestedDataType = comparatorDataTypeMap[comparatorCondition.comparatorType] || 'string';
 
   return (
     <div
@@ -82,6 +83,23 @@ export const SortableCondition = ({
           <option value="includes">Inclui</option>
           <option value="includes-any">Inclui qualquer</option>
           <option value="includes-all">Inclui todos</option>
+        </select>
+
+        <select
+          className="p-2 border rounded-md"
+          value={comparatorCondition.dataType || suggestedDataType}
+          onChange={(e) =>
+            onUpdate({
+              ...comparatorCondition,
+              dataType: e.target.value
+            })
+          }
+          data-testid="data-type-select"
+        >
+          <option value="java.lang.String">java.lang.String</option>
+          <option value="java.lang.Double">java.lang.Double</option>
+          <option value="java.util.List">java.util.List</option>
+          <option value="null">null</option>
         </select>
 
         <input
