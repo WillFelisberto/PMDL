@@ -46,21 +46,19 @@ export const DiscountForm = ({
                 : 'Valor'}
           </label>
           <div className="relative">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+              {discount.discountType === 'percentOff' ? '%' : 'R$'}
+            </span>
             <input
               id="discountValue"
               type="number"
-              className="w-full p-2 pr-8 border rounded-md"
+              className="w-full p-2 pl-8 border rounded-md"
               placeholder={discount.discountType === 'percentOff' ? 'Ex: 10' : 'Ex: 50'}
-              value={discount.adjuster ?? ''} // Evita que seja undefined
+              value={discount.adjuster ?? ''}
               min="0"
               step={discount.discountType === 'percentOff' ? '1' : '0.01'}
-              onChange={
-                (e) => onChange({ ...discount, adjuster: Number(e.target.value) || 0 }) // Evita valores inválidos
-              }
+              onChange={(e) => onChange({ ...discount, adjuster: Number(e.target.value) || 0 })}
             />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
-              {discount.discountType === 'percentOff' ? '%' : 'R$'}
-            </span>
           </div>
         </div>
       </div>

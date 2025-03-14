@@ -55,8 +55,13 @@ exports[`DiscountForm should render correctly the form 1`] = `
         <div
           class="relative"
         >
+          <span
+            class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
+          >
+            %
+          </span>
           <input
-            class="w-full p-2 pr-8 border rounded-md"
+            class="w-full p-2 pl-8 border rounded-md"
             id="discountValue"
             min="0"
             placeholder="Ex: 10"
@@ -64,11 +69,6 @@ exports[`DiscountForm should render correctly the form 1`] = `
             type="number"
             value="10"
           />
-          <span
-            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
-          >
-            %
-          </span>
         </div>
       </div>
     </div>
