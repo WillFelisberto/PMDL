@@ -17,6 +17,7 @@ import { XmlPreview } from '@/components/atoms/XmlPreview';
 import { JsonPreview } from '@/components/atoms/JsonPreview';
 import { generatePmdl } from 'utils/generatePmdl';
 import { QualifierEditor } from '@/components/atoms/QualifierEditor';
+import { DiscountForm } from '@/components/atoms/DiscountForm';
 
 export default function PromotionBuilder() {
   const [promotion, setPromotion] = useState<Promotion>({
@@ -127,6 +128,18 @@ export default function PromotionBuilder() {
         <QualifierEditor
           qualifier={promotion.qualifier}
           onUpdate={(updatedQualifier) => updatePromotion({ qualifier: updatedQualifier })}
+        />
+
+        <DiscountForm
+          discount={promotion.offer.discountStructures[0]} // Pegando o primeiro desconto
+          onChange={(newDiscount) =>
+            setPromotion({
+              ...promotion,
+              offer: {
+                discountStructures: [newDiscount] // Atualizando o desconto corretamente
+              }
+            })
+          }
         />
 
         {/* Área de Condições */}
