@@ -188,15 +188,11 @@ export const generatePmdl = (promotion: Promotion): string => {
     const offer = root.ele('offer');
 
     promotion.offer.discountStructures.forEach((ds) => {
-      const discount = offer
+      offer
         .ele('discount-structure')
         .att('calculator-type', ds.calculatorType)
         .att('discount-type', ds.discountType)
         .att('adjuster', ds.adjuster.toString());
-
-      if (ds.target) {
-        discount.ele('target').txt(ds.target);
-      }
     });
   }
 
