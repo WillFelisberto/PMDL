@@ -6,7 +6,7 @@ type DiscountFormProps = {
 };
 
 export const DiscountForm = ({
-  discount = { calculatorType: '', discountType: 'percentOff', adjuster: 0 },
+  discount = { calculatorType: 'standard', discountType: 'percentOff', adjuster: 0 },
   onChange
 }: DiscountFormProps) => {
   return (

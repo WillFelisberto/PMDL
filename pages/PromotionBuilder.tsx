@@ -31,7 +31,7 @@ export default function PromotionBuilder() {
       discountStructures: [
         {
           adjuster: 0,
-          calculatorType: '',
+          calculatorType: 'standard',
           discountType: 'percentOff',
           target: 'order'
         }
