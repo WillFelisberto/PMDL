@@ -25,7 +25,11 @@ describe('JsonPreview Component', () => {
         }
       ]
     },
-    sites: []
+    sites: [
+      {
+        repositoryId: 'repository-1'
+      }
+    ]
   };
 
   beforeEach(() => {

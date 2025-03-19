@@ -18,6 +18,12 @@ import { JsonPreview } from '@/components/atoms/JsonPreview';
 import { generatePmdl } from 'utils/generatePmdl';
 import { QualifierEditor } from '@/components/atoms/QualifierEditor';
 import { DiscountForm } from '@/components/atoms/DiscountForm';
+import dayjs from 'dayjs'; // Biblioteca para formatar datas
+import utc from 'dayjs/plugin/utc';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+
+dayjs.extend(utc);
+dayjs.extend(customParseFormat);
 
 export default function PromotionBuilder() {
   const [promotion, setPromotion] = useState<Promotion>({
@@ -37,10 +43,13 @@ export default function PromotionBuilder() {
         }
       ]
     },
-    sites: []
+    sites: [],
+    startDate: '',
+    endDate: ''
   });
 
   const [xml, setXml] = useState<string>('');
+  const [siteInput, setSiteInput] = useState<string>('siteUS'); // Estado para entrada do site
 
   useEffect(() => {
     if (promotion.displayName && promotion.qualifier) {
@@ -55,6 +64,18 @@ export default function PromotionBuilder() {
 
   const updatePromotion = (newPromotion: Partial<Promotion>) => {
     setPromotion((prev) => ({ ...prev, ...newPromotion }));
+  };
+
+  const formatDateForInput = (dateString: string | undefined) => {
+    if (!dateString) return '';
+
+    return dayjs(dateString).utc().format('YYYY-MM-DDTHH:mm');
+  };
+
+  const formatDateForStorage = (dateString: string) => {
+    if (!dateString) return '';
+
+    return dayjs(dateString).utc().toISOString();
   };
 
   const handleDragEnd = (event: any) => {
@@ -72,6 +93,24 @@ export default function PromotionBuilder() {
     }
   };
 
+  const addSite = () => {
+    if (
+      siteInput.trim() !== '' &&
+      !promotion.sites.some((site) => site.repositoryId === siteInput)
+    ) {
+      updatePromotion({
+        sites: [...promotion.sites, { repositoryId: siteInput.trim() }]
+      });
+      setSiteInput(''); // Limpar input após adicionar
+    }
+  };
+
+  const removeSite = (repositoryId: string) => {
+    updatePromotion({
+      sites: promotion.sites.filter((site) => site.repositoryId !== repositoryId)
+    });
+  };
+
   return (
     <div className="container mx-auto min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
@@ -87,7 +126,7 @@ export default function PromotionBuilder() {
           />
         </div>
 
-        {/* Nome da Promoção */}
+        {/* Descrição */}
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700 mb-2">Descrição</label>
           <input
@@ -96,7 +135,73 @@ export default function PromotionBuilder() {
             onChange={(e) => updatePromotion({ description: e.target.value })}
           />
         </div>
+        {/* Start Date */}
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Data de Início (opcional)
+          </label>
+          <input
+            type="datetime-local"
+            className="w-full p-2 border rounded-md"
+            value={formatDateForInput(promotion.startDate)}
+            onChange={(e) => updatePromotion({ startDate: formatDateForStorage(e.target.value) })}
+          />
+        </div>
 
+        {/* End Date */}
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Data de Fim (opcional)
+          </label>
+          <input
+            type="datetime-local"
+            className="w-full p-2 border rounded-md"
+            value={formatDateForInput(promotion.endDate)}
+            onChange={(e) => updatePromotion({ endDate: formatDateForStorage(e.target.value) })}
+          />
+        </div>
+
+        {/* Sites */}
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-2">Sites Aplicáveis</label>
+          <div className="flex space-x-2">
+            <input
+              type="text"
+              className="w-full p-2 border rounded-md"
+              placeholder="Digite o ID do site"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  addSite();
+                }
+              }}
+              value={siteInput}
+              onChange={(e) => setSiteInput(e.target.value)}
+            />
+            <button className="px-4 py-2 bg-blue-500 text-white rounded-md" onClick={addSite}>
+              Adicionar
+            </button>
+          </div>
+          {/* Lista de sites adicionados */}
+          <ul className="mt-2">
+            {promotion.sites.map((site) => (
+              <li
+                key={site.repositoryId}
+                className="flex justify-between items-center bg-gray-100 p-2 rounded-md mt-2"
+              >
+                <span>{site.repositoryId}</span>
+                <button
+                  className="text-red-500 text-sm"
+                  onClick={() => removeSite(site.repositoryId)}
+                >
+                  Remover
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Aplicar desconto em */}
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Aplicar desconto em:

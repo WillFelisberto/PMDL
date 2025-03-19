@@ -1,9 +1,15 @@
 'use client';
 import { Promotion } from '@/types/promotion';
+import dayjs from 'dayjs';
 import { Prism as ReactSyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { formatXmlToSingleLine } from 'utils/formatXML';
 import { generatePmdl } from 'utils/generatePmdl';
+import utc from 'dayjs/plugin/utc';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+
+dayjs.extend(utc);
+dayjs.extend(customParseFormat);
 
 type JsonPreviewProps = {
   promotion: Promotion;
@@ -14,6 +20,7 @@ export const JsonPreview = ({ promotion }: JsonPreviewProps) => {
     return (
       promotion.displayName.trim() !== '' &&
       promotion.description.trim() !== '' &&
+      promotion.sites.length > 0 &&
       promotion.priority !== null &&
       promotion.offer.discountStructures.length > 0 &&
       promotion.offer?.discountStructures?.[0]?.target?.trim() !== ''
@@ -21,26 +28,42 @@ export const JsonPreview = ({ promotion }: JsonPreviewProps) => {
   };
 
   const generateOccPayload = () => {
-    return {
+    const payload: any = {
       displayName: promotion.displayName,
       description: promotion.description,
       enabled: true,
       priority: promotion.priority,
       templatePath: promotion.offer.discountStructures[0].target,
       templateName: 'rawPmdlTemplate',
-      sites: [
-        {
-          repositoryId: 'siteUS'
-        }
-      ],
+      sites: promotion.sites.map((site) => site),
       templateValues: {
         pmdl: {
           xml: formatXmlToSingleLine(generatePmdl(promotion))
         }
       }
     };
-  };
 
+    const formatToISO = (dateString: string | undefined) => {
+      if (!dateString) return undefined;
+
+      const parsedDate = dayjs(dateString).utc(); // Converte para UTC automaticamente
+
+      return parsedDate.isValid() ? parsedDate.utc().toISOString() : undefined;
+    };
+
+    // Adiciona startDate e endDate somente se existirem e forem válidas
+    if (promotion.startDate) {
+      const formattedStartDate = formatToISO(promotion.startDate);
+      if (formattedStartDate) payload.startDate = formattedStartDate;
+    }
+
+    if (promotion.endDate) {
+      const formattedEndDate = formatToISO(promotion.endDate);
+      if (formattedEndDate) payload.endDate = formattedEndDate;
+    }
+
+    return payload;
+  };
   // Só exibe o JSON se todos os campos estiverem preenchidos
   if (!isValidPromotion()) {
     return null;

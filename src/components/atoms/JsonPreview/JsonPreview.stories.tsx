@@ -35,7 +35,11 @@ const samplePromotion: Promotion = {
   enabled: false,
   qualifier: undefined,
   conditions: [],
-  sites: []
+  sites: [
+    {
+      repositoryId: 'site-1'
+    }
+  ]
 };
 
 export const Default: Story = {

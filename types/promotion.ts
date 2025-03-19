@@ -126,4 +126,9 @@ export type Promotion = {
   offer: Offer;
   conditions: PromotionCondition[];
   sites: Array<{ repositoryId: string }>;
+  startDate?: string;
+  endDate?: string;
+  templatePath?: string;
+  templateName?: string;
+  templateValues?: { [key: string]: any };
 };

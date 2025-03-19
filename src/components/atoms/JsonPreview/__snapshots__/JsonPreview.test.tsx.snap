@@ -304,7 +304,7 @@ exports[`JsonPreview Component Deve renderizar corretamente o título do JSON Pr
             class="token"
             style="color: rgb(168, 255, 96);"
           >
-            "siteUS"
+            "repository-1"
           </span>
           <span>
             

@@ -21,6 +21,7 @@
     "@dnd-kit/utilities": "^3.2.2",
     "@tailwindcss/cli": "^4.0.13",
     "@tailwindcss/postcss": "^4.0.13",
+    "dayjs": "^1.11.13",
     "husky": "^9.1.7",
     "lucide-react": "^0.479.0",
     "next": "latest",
