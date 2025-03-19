@@ -13,7 +13,7 @@
     "test:ci": "jest --ci",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build -s public",
+    "build-storybook": "storybook build",
     "serve-storybook": "serve storybook-static"
   },
   "dependencies": {
