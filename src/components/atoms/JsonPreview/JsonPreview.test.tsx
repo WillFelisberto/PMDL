@@ -14,6 +14,7 @@ describe('JsonPreview Component', () => {
     enabled: true,
     priority: 1,
     conditions: [],
+    priceListGroups: ['group-1', 'group-2'],
     qualifier: undefined,
     offer: {
       discountStructures: [

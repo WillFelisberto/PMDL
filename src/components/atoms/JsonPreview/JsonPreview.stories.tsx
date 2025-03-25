@@ -22,6 +22,7 @@ const samplePromotion: Promotion = {
   displayName: 'Promoção de Teste',
   description: 'Descrição da promoção de teste',
   priority: 1,
+  priceListGroups: ['group-1', 'group-2'],
   offer: {
     discountStructures: [
       {

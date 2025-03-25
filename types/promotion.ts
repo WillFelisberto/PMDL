@@ -126,6 +126,7 @@ export type Promotion = {
   offer: Offer;
   conditions: PromotionCondition[];
   sites: Array<{ repositoryId: string }>;
+  priceListGroups: string[];
   startDate?: string;
   endDate?: string;
   templatePath?: string;

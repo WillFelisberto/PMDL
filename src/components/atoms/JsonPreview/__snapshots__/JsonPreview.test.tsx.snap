@@ -248,6 +248,85 @@ exports[`JsonPreview Component Deve renderizar corretamente o título do JSON Pr
             class="token"
             style="color: rgb(150, 203, 254);"
           >
+            "priceListGroups"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(237, 237, 237);"
+          >
+            :
+          </span>
+          <span>
+             
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            [
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+                
+          </span>
+          <span
+            class="token"
+            style="color: rgb(168, 255, 96);"
+          >
+            "group-1"
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            ,
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+                
+          </span>
+          <span
+            class="token"
+            style="color: rgb(168, 255, 96);"
+          >
+            "group-2"
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+              
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            ]
+          </span>
+          <span
+            class="token"
+            style="color: rgb(197, 200, 198);"
+          >
+            ,
+          </span>
+          <span>
+            
+
+          </span>
+          <span>
+              
+          </span>
+          <span
+            class="token"
+            style="color: rgb(150, 203, 254);"
+          >
             "sites"
           </span>
           <span

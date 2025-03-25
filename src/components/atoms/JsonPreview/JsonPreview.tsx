@@ -21,6 +21,7 @@ export const JsonPreview = ({ promotion }: JsonPreviewProps) => {
       promotion.displayName.trim() !== '' &&
       promotion.description.trim() !== '' &&
       promotion.sites.length > 0 &&
+      promotion.priceListGroups.length > 0 &&
       promotion.priority !== null &&
       promotion.offer.discountStructures.length > 0 &&
       promotion.offer?.discountStructures?.[0]?.target?.trim() !== ''
@@ -35,6 +36,7 @@ export const JsonPreview = ({ promotion }: JsonPreviewProps) => {
       priority: promotion.priority,
       templatePath: promotion.offer.discountStructures[0].target,
       templateName: 'rawPmdlTemplate',
+      priceListGroups: promotion.priceListGroups,
       sites: promotion.sites.map((site) => site),
       templateValues: {
         pmdl: {
